@@ -107,6 +107,11 @@ class Channel(Hashable):
         except:
             pass
 
+        try:
+            self.nsfw = kwargs.get('nsfw')
+        except:
+            self.nsfw = False # If 'nsfw' does not exist assume the channel is a sfw channel.
+
         self._permission_overwrites = []
         everyone_index = 0
         everyone_id = self.server.id
@@ -442,5 +447,4 @@ class PrivateChannel(Hashable):
             base.kick_members = True
 
         return base
-
 
