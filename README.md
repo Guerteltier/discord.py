@@ -1,46 +1,38 @@
-# discord.py
+# discord.py scrumpy version
 
-[![PyPI](https://img.shields.io/pypi/v/discord.py.svg)](https://pypi.python.org/pypi/discord.py/)
-[![PyPI](https://img.shields.io/pypi/pyversions/discord.py.svg)](https://pypi.python.org/pypi/discord.py/)
+This is not the offical version of Discord.py, this is a personal build to be used until I need to move to rewrite myself.
+You can find the offical version over here: https://github.com/Rapptz/discord.py/
 
-discord.py is an API wrapper for Discord written in Python.
+### About upgrading
 
-This was written to allow easier writing of bots or chat logs. Make sure to familiarise yourself with the API using the [documentation][doc].
-
-[doc]: http://discordpy.rtfd.org/en/latest
-
-### Breaking Changes
-
-The discord API is constantly changing and the wrapper API is as well. There will be no effort to keep backwards compatibility in versions before `v1.0.0`.
-
-I recommend that you follow the discussion in the [unofficial Discord API discord channel][ch] and update your installation periodically. I will attempt to make note of breaking changes in the API channel so make sure to subscribe to library news by typing `?sub news` in the channel.
-
-[ch]: https://discord.gg/0SBTUU1wZTUzBx2q
+Do note that installing this package will remove the official version of dPy from your box, although I do plan to make sure I keep this repo up to date with the official one do keep this in mind that if I suddenly dissapear you might not get updates.
 
 ## Installing
 
 To install the library without full voice support, you can just run the following command:
 
 ```
-python3 -m pip install -U discord.py
+python3 -m pip install git+https://github.com/KakolIsSomewhatGay/discord.py@async
+# If there was a supar important update and I forgot to change the version number append `--upgrade` to the end to force the update.
 ```
+
 
 Otherwise to get voice support you should run the following command:
 
 ```
-python3 -m pip install -U discord.py[voice]
+python3 -m pip install git+https://github.com/KakolIsSomewhatGay/discord.py@async[voice]
 ```
 
 To install the development version, do the following:
 
 ```
-python3 -m pip install -U https://github.com/Rapptz/discord.py/archive/master.zip#egg=discord.py[voice]
+python3 -m pip install -U https://github.com/KakolIsSomewhatGay/discord.py/archive/master.zip#egg=discord.py[voice]
 ```
 
 or the more long winded from cloned source:
 
 ```
-$ git clone https://github.com/Rapptz/discord.py
+$ git clone https://github.com/KakolIsSomewhatGay/discord.py
 $ cd discord.py
 $ python3 -m pip install -U .[voice]
 ```
@@ -75,9 +67,16 @@ async def on_message(message):
                 counter += 1
 
         await client.edit_message(tmp, 'You have {} messages.'.format(counter))
-    elif message.content.startswith('!sleep'):
+    elif message.content.startswith('!omgverynsfwcommand'):
         await asyncio.sleep(5)
-        await client.send_message(message.channel, 'Done sleeping')
+        if message.channel.is_nsfw is True:
+            is_nsfw_omg = "is not"
+        elif:
+            is_nsfw_omg = "is"
+
+        await client.send_message(message.channel, 'The channel {0} nsfw'.format(
+            is_nsfw_omg
+        ))
 
 client.run('token')
 ```
@@ -99,6 +98,7 @@ Usually `pip` will handle these for you.
 
 ## Related Projects
 
+- [discord.py](https://github.com/Rapptz/discord.py/)
 - [discord.js](https://github.com/discord-js/discord.js)
 - [discord.io](https://github.com/izy521/discord.io)
 - [Discord.NET](https://github.com/RogueException/Discord.Net)
