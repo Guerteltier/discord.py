@@ -1,3 +1,6 @@
+This repo is no longer maintained
+### Original README
+
 # discord.py scrumpy version
 
 This is not the offical version of Discord.py, this is a personal build to be used until I need to move to rewrite myself.
