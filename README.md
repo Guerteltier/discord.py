@@ -23,12 +23,6 @@ Otherwise to get voice support you should run the following command:
 python3 -m pip install git+https://github.com/JonLan2002/discord.py@async[voice]
 ```
 
-To install the development version, do the following:
-
-```
-python3 -m pip install -U https://github.com/JonLan2002/discord.py/archive/master.zip#egg=discord.py[voice]
-```
-
 or the more long winded from cloned source:
 
 ```
