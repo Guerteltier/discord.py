@@ -1,7 +1,7 @@
-# discord.py
+This is not the offical version of Discord.py.
+You can find the offical version over here: https://github.com/Rapptz/discord.py/
 
-[![PyPI](https://img.shields.io/pypi/v/discord.py.svg)](https://pypi.python.org/pypi/discord.py/)
-[![PyPI](https://img.shields.io/pypi/pyversions/discord.py.svg)](https://pypi.python.org/pypi/discord.py/)
+# discord.py
 
 discord.py is an API wrapper for Discord written in Python.
 
@@ -9,39 +9,30 @@ This was written to allow easier writing of bots or chat logs. Make sure to fami
 
 [doc]: http://discordpy.rtfd.org/en/latest
 
-### Breaking Changes
-
-The discord API is constantly changing and the wrapper API is as well. There will be no effort to keep backwards compatibility in versions before `v1.0.0`.
-
-I recommend joining either the [official discord.py server][guild] or the [Discord API server][ch] for help and discussion about the library.
-
-[guild]: https://discord.gg/r3sSKJJ
-[ch]: https://discord.gg/discord-api
-
 ## Installing
 
 To install the library without full voice support, you can just run the following command:
 
 ```
-python3 -m pip install -U discord.py
+python3 -m pip install git+https://github.com/JonLan2002/discord.py@async
 ```
 
 Otherwise to get voice support you should run the following command:
 
 ```
-python3 -m pip install -U discord.py[voice]
+python3 -m pip install git+https://github.com/JonLan2002/discord.py@async[voice]
 ```
 
 To install the development version, do the following:
 
 ```
-python3 -m pip install -U https://github.com/Rapptz/discord.py/archive/master.zip#egg=discord.py[voice]
+python3 -m pip install -U https://github.com/JonLan2002/discord.py/archive/master.zip#egg=discord.py[voice]
 ```
 
 or the more long winded from cloned source:
 
 ```
-$ git clone https://github.com/Rapptz/discord.py
+$ git clone https://github.com/JonLan2002/discord.py
 $ cd discord.py
 $ python3 -m pip install -U .[voice]
 ```
@@ -76,9 +67,16 @@ async def on_message(message):
                 counter += 1
 
         await client.edit_message(tmp, 'You have {} messages.'.format(counter))
-    elif message.content.startswith('!sleep'):
+    elif message.content.startswith('!omgverynsfwcommand'):
         await asyncio.sleep(5)
-        await client.send_message(message.channel, 'Done sleeping')
+        if message.channel.is_nsfw is True:
+            is_nsfw_omg = "is not"
+        elif:
+            is_nsfw_omg = "is"
+
+        await client.send_message(message.channel, 'The channel {0} nsfw'.format(
+            is_nsfw_omg
+        ))
 
 client.run('token')
 ```
@@ -97,3 +95,12 @@ You can find examples in the examples directory.
       debian based systems by doing `sudo apt-get install libffi-dev`.
 
 Usually `pip` will handle these for you.
+
+## Related Projects
+
+- [discord.js](https://github.com/discord-js/discord.js)
+- [discord.io](https://github.com/izy521/discord.io)
+- [Discord.NET](https://github.com/RogueException/Discord.Net)
+- [DiscordSharp](https://github.com/Luigifan/DiscordSharp)
+- [Discord4J](https://github.com/knobody/Discord4J)
+- [discordrb](https://github.com/meew0/discordrb)
