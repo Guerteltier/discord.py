@@ -11,19 +11,7 @@ This was written to allow easier writing of bots or chat logs. Make sure to fami
 
 ## Installing
 
-To install the library without full voice support, you can just run the following command:
-
-```
-python3 -m pip install git+https://github.com/JonLan2002/discord.py@async
-```
-
-Otherwise to get voice support you should run the following command:
-
-```
-python3 -m pip install git+https://github.com/JonLan2002/discord.py@async[voice]
-```
-
-or the more long winded from cloned source:
+To install the library, you can just run the following commands:
 
 ```
 $ git clone https://github.com/JonLan2002/discord.py
@@ -84,7 +72,7 @@ You can find examples in the examples directory.
 - Python 3.4.2+
 - `aiohttp` library
 - `websockets` library
-- `PyNaCl` library (optional, for voice only)
+- `PyNaCl` library
     - On Linux systems this requires the `libffi` library. You can install in
       debian based systems by doing `sudo apt-get install libffi-dev`.
 
