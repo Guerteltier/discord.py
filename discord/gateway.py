@@ -281,6 +281,7 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
                 },
                 'compress': True,
                 'large_threshold': 250,
+                'guild_subscriptions': False,
                 'v': 3
             }
         }
