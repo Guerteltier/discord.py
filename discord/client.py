@@ -144,6 +144,7 @@ class Client:
         self.cache_auth = options.get('cache_auth', True)
         self.shard_id = options.get('shard_id')
         self.shard_count = options.get('shard_count')
+        self.guild_subscriptions = options.get('guild_subscriptions', True)
 
         max_messages = options.get('max_messages')
         if max_messages is None or max_messages < 100:
