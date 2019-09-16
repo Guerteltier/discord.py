@@ -211,6 +211,7 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
         ws.gateway = gateway
         ws.shard_id = client.shard_id
         ws.shard_count = client.shard_count
+        ws.guild_subscriptions = client.guild_subscriptions
 
         client.connection._update_references(ws)
 
@@ -281,7 +282,7 @@ class DiscordWebSocket(websockets.client.WebSocketClientProtocol):
                 },
                 'compress': True,
                 'large_threshold': 250,
-                'guild_subscriptions': False,
+                'guild_subscriptions': self.guild_subscriptions,
                 'v': 3
             }
         }
